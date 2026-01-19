@@ -1,0 +1,11 @@
+SELECT id,
+       first_name,
+       last_name,
+       department_id,
+       salary AS salary
+FROM (
+    SELECT *, ROW_NUMBER() OVER (PARTITION BY id ORDER BY salary DESC) AS rn
+    FROM ms_employee_salary
+)t
+WHERE rn = 1
+ORDER BY id
