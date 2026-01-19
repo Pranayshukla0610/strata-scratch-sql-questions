@@ -1,0 +1,1 @@
+-- SQL solution for Acceptance Rate By Date 
